@@ -21,10 +21,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} antialiased`}>
         <Theme>
-          <main>
-            <NavBar />
-            {children}
-          </main>
+          <NavBar />
+          <main className="mx-auto container">{children}</main>
         </Theme>
       </body>
     </html>

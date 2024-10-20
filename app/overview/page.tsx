@@ -1,7 +1,7 @@
 import React from "react";
 
 const OverviewPage = () => {
-  return <div>Overview</div>;
+  return <div className="">Overview</div>;
 };
 
 export default OverviewPage;

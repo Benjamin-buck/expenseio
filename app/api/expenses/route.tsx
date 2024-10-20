@@ -4,6 +4,8 @@ import { z } from "zod";
 
 const schema = z.object({
   merchant: z.string().min(2).max(255),
+  description: z.string().min(1),
+  price: z.number(),
 });
 
 export async function POST(request: NextRequest) {
@@ -16,15 +18,14 @@ export async function POST(request: NextRequest) {
     return NextResponse.json(validation.error.errors, { status: 400 });
 
   // Post the request
-  const expense = await prisma.expense.create({
+  const newExpense = await prisma.expense.create({
     data: {
       merchant: body.merchant,
       price: body.price,
       description: body.description,
-      date: body.date,
     },
   });
 
   // Return the request
-  return NextResponse.json(expense);
+  return NextResponse.json(newExpense, { status: 201 });
 }
