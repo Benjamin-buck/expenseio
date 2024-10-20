@@ -4,8 +4,7 @@ import { Table } from "@radix-ui/themes";
 const ExpensesTable = async () => {
   const expenses = await prisma.expense.findMany();
   return (
-    <div className="mt-8">
-      <h1 className="text-2xl font-semibold">Expenses</h1>
+    <div>
       <Table.Root>
         <Table.Header>
           <Table.Row>
