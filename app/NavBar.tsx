@@ -6,7 +6,7 @@ import React from "react";
 import { PiPiggyBankBold } from "react-icons/pi";
 
 const links = [
-  { id: 1, label: "Overview", href: "/overview" },
+  { id: 1, label: "Dashboard", href: "/overview" },
   { id: 1, label: "Expenses", href: "/expenses" },
 ];
 
@@ -23,7 +23,7 @@ const NavBar = () => {
               <li key={id}>
                 <Link
                   href={href}
-                  className={`font-semibold ${
+                  className={`font-semibold hover:text-pink-600 ${
                     pathname === href ? "text-pink-400" : "body-text"
                   }`}
                 >

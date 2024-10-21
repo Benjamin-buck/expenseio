@@ -6,7 +6,7 @@ const NavUserProfile = () => {
     <div className="flex items-center gap-3">
       <DropdownMenu.Root>
         <DropdownMenu.Trigger>
-          <Text className="flex items-center gap-2">
+          <Text className="flex items-center gap-2 font-semibold body-text">
             Olivia Rodrigo
             <DropdownMenu.TriggerIcon />
             <Avatar

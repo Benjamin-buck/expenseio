@@ -1,4 +1,4 @@
-import { Button } from "@radix-ui/themes";
+import { Button, Tooltip } from "@radix-ui/themes";
 import ExpensesTable from "./ExpensesTable";
 
 const ExpensesPage = () => {
@@ -6,11 +6,13 @@ const ExpensesPage = () => {
     <div className="mt-8">
       <div className="flex justify-between items-center">
         <h1 className="text-2xl font-semibold">Expenses</h1>
-        <Button color="pink" variant="soft">
-          Add Expense
-        </Button>
+        <Tooltip content="Add a new expense">
+          <Button color="pink" variant="soft">
+            Add Expense
+          </Button>
+        </Tooltip>
       </div>
-      <ExpensesTable className="mt-3" />
+      <ExpensesTable />
     </div>
   );
 };
