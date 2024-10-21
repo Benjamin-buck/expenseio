@@ -4,7 +4,7 @@ import { z } from "zod";
 
 const schema = z.object({
   merchant: z.string().min(2).max(255),
-  description: z.string().min(1),
+  description: z.string(),
   price: z.string(),
 });
 
@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
   const newExpense = await prisma.expense.create({
     data: {
       merchant: body.merchant,
-      price: parseInt(body.price),
+      price: parseFloat(body.price),
       description: body.description,
     },
   });

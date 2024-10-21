@@ -17,8 +17,10 @@ const NavUserProfile = () => {
         </DropdownMenu.Trigger>
         <DropdownMenu.Content>
           <DropdownMenu.Item>My Profile</DropdownMenu.Item>
+          <DropdownMenu.Item>My Budgets</DropdownMenu.Item>
           <DropdownMenu.Separator />
           <DropdownMenu.Item color="red">Account Settings</DropdownMenu.Item>
+          <DropdownMenu.Item color="red">Log out</DropdownMenu.Item>
         </DropdownMenu.Content>
       </DropdownMenu.Root>
     </div>

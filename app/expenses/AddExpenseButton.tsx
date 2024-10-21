@@ -75,7 +75,6 @@ const AddExpenseButton = () => {
                 </Text>
                 <TextField.Root
                   placeholder="Enter the price"
-                  type="number"
                   {...register("price")}
                 />
               </label>
