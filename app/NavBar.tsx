@@ -7,7 +7,8 @@ import { PiPiggyBankBold } from "react-icons/pi";
 
 const links = [
   { id: 1, label: "Dashboard", href: "/overview" },
-  { id: 1, label: "Expenses", href: "/expenses" },
+  { id: 2, label: "Expenses", href: "/expenses" },
+  { id: 3, label: "Subscriptions", href: "/subscriptions" },
 ];
 
 const NavBar = () => {

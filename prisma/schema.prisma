@@ -20,3 +20,11 @@ model Expense {
   description String   @db.Text
   price       Float    @db.Float
 }
+
+model Subscription {
+  id         Int      @id @default(autoincrement())
+  createdAt  DateTime @default(now())
+  modifiedAt DateTime @default(now())
+  merchant   String   @db.VarChar(255)
+  price      Float    @db.Float
+}

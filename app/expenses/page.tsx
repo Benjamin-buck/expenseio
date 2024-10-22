@@ -1,11 +1,15 @@
+import PageTitle from "@/components/PageTitle";
 import AddExpenseButton from "./AddExpenseButton";
 import ExpensesTable from "./ExpensesTable";
 
 const ExpensesPage = () => {
   return (
-    <div className="mt-8">
+    <div>
+      <PageTitle
+        title="My Expenses"
+        description="The best way to keep track of your finances."
+      />
       <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-semibold">Expenses</h1>
         <AddExpenseButton />
       </div>
       <ExpensesTable />

@@ -1,4 +1,5 @@
 import { Avatar, DropdownMenu, Text } from "@radix-ui/themes";
+import Link from "next/link";
 import React from "react";
 
 const NavUserProfile = () => {
@@ -16,7 +17,9 @@ const NavUserProfile = () => {
           </Text>
         </DropdownMenu.Trigger>
         <DropdownMenu.Content>
-          <DropdownMenu.Item>My Profile</DropdownMenu.Item>
+          <DropdownMenu.Item>
+            <Link href="/profile/1">My Profile</Link>
+          </DropdownMenu.Item>
           <DropdownMenu.Item>My Budgets</DropdownMenu.Item>
           <DropdownMenu.Separator />
           <DropdownMenu.Item color="red">Account Settings</DropdownMenu.Item>
