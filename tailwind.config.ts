@@ -11,6 +11,10 @@ const config: Config = {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        black: "#1D1D1B",
+        credit: "#C12D30",
+        debit: "#2DC137",
+        gray: "#2F2F2D",
       },
       fontFamily: {
         inter: ["var(--font-inter)"],

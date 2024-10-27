@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Instrument_Sans, Inter } from "next/font/google";
+import VerticalNavbar from "@/components/VerticalNavbar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -24,8 +25,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable}  ${instrumentSans.variable}`}>
-        {children}
+      <body
+        className={`${inter.variable}  ${instrumentSans.variable} flex h-[2000px] sticky`}
+      >
+        <VerticalNavbar />
+        <main className="">{children}</main>
       </body>
     </html>
   );
