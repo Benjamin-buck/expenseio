@@ -3,14 +3,21 @@ import Link from "next/link";
 import React from "react";
 
 export const navLinks = [
-  { label: "Home", whiteLogo: "/home-white.svg", grayLogo: "/home-gray.svg" },
+  {
+    label: "Home",
+    href: "/dashboard",
+    whiteLogo: "/home-white.svg",
+    grayLogo: "/home-gray.svg",
+  },
   {
     label: "Expenses",
+    href: "/expenses",
     whiteLogo: "/expenses-white.svg",
     grayLogo: "/expenses-gray.svg",
   },
   {
     label: "Cards",
+    href: "/cards",
     whiteLogo: "/cards-white.svg",
     grayLogo: "/cards-gray.svg",
   },
@@ -29,9 +36,9 @@ const VerticalNavbar = () => {
         />
         <div className="flex justify-between h-full items-center flex-col">
           <ul className="my-10 flex flex-col gap-4">
-            {navLinks.map(({ label, whiteLogo }) => (
+            {navLinks.map(({ label, whiteLogo, href }) => (
               <li className="bg-gray p-2 rounded-md" key={label}>
-                <Link href="/">
+                <Link href={href!}>
                   <Image
                     src={whiteLogo}
                     width={25}
