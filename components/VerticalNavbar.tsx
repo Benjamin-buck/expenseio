@@ -4,28 +4,55 @@ import React from "react";
 
 export const navLinks = [
   { label: "Home", whiteLogo: "/home-white.svg", grayLogo: "/home-gray.svg" },
-  { label: "Home", whiteLogo: "/home-white.svg", grayLogo: "/home-gray.svg" },
+  {
+    label: "Expenses",
+    whiteLogo: "/expenses-white.svg",
+    grayLogo: "/expenses-gray.svg",
+  },
+  {
+    label: "Cards",
+    whiteLogo: "/cards-white.svg",
+    grayLogo: "/cards-gray.svg",
+  },
 ];
 
 const VerticalNavbar = () => {
   return (
-    <div className="h-[100vh] w-[5rem] bg-black flex items-center flex-col fixed">
-      <Image
-        src="/logo.svg"
-        width={42}
-        height={42}
-        alt="logo"
-        className="pt-4"
-      />
-      <ul className="my-10 flex flex-col gap-4">
-        {navLinks.map(({ label, grayLogo, whiteLogo }) => (
-          <li className="bg-gray p-2 rounded-md" key={label}>
-            <Link href="/">
-              <Image src={whiteLogo} width={25} height={25} alt="home icon" />
-            </Link>
-          </li>
-        ))}
-      </ul>
+    <div>
+      <div className="h-[100vh] w-[5rem] bg-black flex items-center flex-col fixed">
+        <Image
+          src="/logo.svg"
+          width={42}
+          height={42}
+          alt="logo"
+          className="pt-4"
+        />
+        <div className="flex justify-between h-full items-center flex-col">
+          <ul className="my-10 flex flex-col gap-4">
+            {navLinks.map(({ label, grayLogo, whiteLogo }) => (
+              <li className="bg-gray p-2 rounded-md" key={label}>
+                <Link href="/">
+                  <Image
+                    src={whiteLogo}
+                    width={25}
+                    height={25}
+                    alt="home icon"
+                  />
+                </Link>
+              </li>
+            ))}
+          </ul>
+          <Link href="/">
+            <Image
+              src="/settings-gray.svg"
+              width={25}
+              height={25}
+              alt="home icon"
+              className="mb-5"
+            />
+          </Link>
+        </div>
+      </div>
     </div>
   );
 };
