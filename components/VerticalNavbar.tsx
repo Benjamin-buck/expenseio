@@ -1,22 +1,32 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import React from "react";
 
 export const navLinks = [
-  { label: "Home", whiteLogo: "/home-white.svg", grayLogo: "/home-gray.svg" },
+  {
+    label: "Home",
+    href: "/dashboard",
+    whiteLogo: "/home-white.svg",
+    grayLogo: "/home-gray.svg",
+  },
   {
     label: "Expenses",
+    href: "/expenses",
     whiteLogo: "/expenses-white.svg",
     grayLogo: "/expenses-gray.svg",
   },
   {
     label: "Cards",
+    href: "/cards",
     whiteLogo: "/cards-white.svg",
     grayLogo: "/cards-gray.svg",
   },
 ];
 
 const VerticalNavbar = () => {
+  const currentPath = usePathname();
   return (
     <div>
       <div className="h-[100vh] w-[5rem] bg-black flex items-center flex-col fixed">
@@ -29,9 +39,14 @@ const VerticalNavbar = () => {
         />
         <div className="flex justify-between h-full items-center flex-col">
           <ul className="my-10 flex flex-col gap-4">
-            {navLinks.map(({ label, whiteLogo }) => (
-              <li className="bg-gray p-2 rounded-md" key={label}>
-                <Link href="/">
+            {navLinks.map(({ label, whiteLogo, href }) => (
+              <li
+                className={`${
+                  currentPath === href && "bg-[#2F2F2D] "
+                } rounded-md p-2`}
+                key={label}
+              >
+                <Link href={href!}>
                   <Image
                     src={whiteLogo}
                     width={25}
