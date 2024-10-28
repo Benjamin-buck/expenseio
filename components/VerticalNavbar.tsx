@@ -29,7 +29,7 @@ const VerticalNavbar = () => {
         />
         <div className="flex justify-between h-full items-center flex-col">
           <ul className="my-10 flex flex-col gap-4">
-            {navLinks.map(({ label, grayLogo, whiteLogo }) => (
+            {navLinks.map(({ label, whiteLogo }) => (
               <li className="bg-gray p-2 rounded-md" key={label}>
                 <Link href="/">
                   <Image

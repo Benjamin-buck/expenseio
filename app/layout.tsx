@@ -29,7 +29,7 @@ export default function RootLayout({
         className={`${inter.variable}  ${instrumentSans.variable} flex h-[2000px] sticky`}
       >
         <VerticalNavbar />
-        <main className="ml-[6rem]">{children}</main>
+        <main className="w-full pl-[9rem] pr-[4rem]">{children}</main>
       </body>
     </html>
   );
