@@ -14,9 +14,10 @@ datasource db {
 }
 
 model Expense {
-  id        Int      @id @default(autoincrement())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  merchant  String   @db.VarChar(255)
-  price     Float    @db.Float
+  id             Int       @id @default(autoincrement())
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  merchant       String    @db.VarChar(255)
+  price          Float     @db.Float
+  dateOfPurchase String
 }

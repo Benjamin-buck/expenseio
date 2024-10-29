@@ -9,7 +9,8 @@ export async function POST(request: NextRequest) {
   const newExpense = await prisma.expense.create({
     data: {
       merchant: body.merchant,
-      price: body.price,
+      price: parseFloat(body.price),
+      dateOfPurchase: body.date,
     },
   });
 
