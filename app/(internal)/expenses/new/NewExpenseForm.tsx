@@ -4,6 +4,13 @@ import * as React from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useRouter } from "next/navigation";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const NewExpenseForm = () => {
   const router = useRouter();
@@ -33,6 +40,21 @@ const NewExpenseForm = () => {
         placeholder="Merchant"
         {...register("merchant")}
       />
+      <div className=" mb-5">
+        <label htmlFor="merchant" className="font-semibold">
+          Merchant
+        </label>
+        <Select>
+          <SelectTrigger className="w-[250px]">
+            <SelectValue placeholder="Category" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="groceries">Rent</SelectItem>
+            <SelectItem value="rent">Groceires</SelectItem>
+            <SelectItem value="system">System</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
 
       <div className="flex flex-col mb-5">
         <label htmlFor="date" className="font-semibold">

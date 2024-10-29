@@ -7,8 +7,11 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
+import prisma from "@/prisma/client";
 
-const CategoriesTable = () => {
+const CategoriesTable = async () => {
+  const categories = await prisma.category.findMany();
+
   return (
     <div className="card">
       <div>
@@ -28,13 +31,15 @@ const CategoriesTable = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          <TableRow>
-            <TableCell>Paid</TableCell>
-            <TableCell className="text-right">
-              <span className="font-bold text-green-500">20$</span> of{" "}
-              <span className="font-bold text-green-500">200$</span>
-            </TableCell>
-          </TableRow>
+          {categories.map((category) => (
+            <TableRow key={category.id}>
+              <TableCell>{category.title}</TableCell>
+              <TableCell className="text-right">
+                <span className="font-bold text-green-500">20$</span> of{" "}
+                <span className="font-bold text-green-500">200$</span>
+              </TableCell>
+            </TableRow>
+          ))}
         </TableBody>
       </Table>
     </div>

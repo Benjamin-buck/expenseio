@@ -10,7 +10,6 @@ import {
 import Button from "@/components/Button";
 import Link from "next/link";
 import { Expense } from "@prisma/client";
-
 interface Props {
   expenses: Expense[];
 }
@@ -52,7 +51,7 @@ const ExpensesTable = async ({ expenses }: Props) => {
                 {expense.dateOfPurchase}
               </TableCell>
               <TableCell>{expense.merchant}</TableCell>
-              <TableCell>Business</TableCell>
+              <TableCell>{}</TableCell>
               <TableCell className="text-right font-bold text-red-500">
                 ${expense.price}
               </TableCell>
