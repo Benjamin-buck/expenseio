@@ -2,18 +2,20 @@ import React from "react";
 import {
   Table,
   TableBody,
-  TableCaption,
   TableCell,
   TableHead,
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
 import Button from "@/components/Button";
-import prisma from "@/prisma/client";
 import Link from "next/link";
+import { Expense } from "@prisma/client";
 
-const ExpensesTable = async () => {
-  const expenses = await prisma.expense.findMany();
+interface Props {
+  expenses: Expense[];
+}
+
+const ExpensesTable = async ({ expenses }: Props) => {
   return (
     <div className="card">
       <div className="flex justify-between items-center">
@@ -46,7 +48,9 @@ const ExpensesTable = async () => {
         <TableBody>
           {expenses.map((expense) => (
             <TableRow key={expense.id}>
-              <TableCell className="font-medium">08/11/2024</TableCell>
+              <TableCell className="font-medium">
+                {expense.dateOfPurchase}
+              </TableCell>
               <TableCell>{expense.merchant}</TableCell>
               <TableCell>Business</TableCell>
               <TableCell className="text-right font-bold text-red-500">
