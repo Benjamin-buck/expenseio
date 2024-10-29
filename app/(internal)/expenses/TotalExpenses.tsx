@@ -19,7 +19,7 @@ const TotalExpenses = ({ expenses }: Props) => {
       <div>
         <h2 className="card_heading">Total Expenses</h2>
         <p className="card_desc">Your total expenses this month.</p>
-        {sum}
+        <p className="text-xl font-semibold text-red-500">{sum.toFixed(2)}</p>
       </div>
     </div>
   );

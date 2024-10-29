@@ -14,10 +14,23 @@ datasource db {
 }
 
 model Expense {
-  id             Int       @id @default(autoincrement())
-  createdAt      DateTime  @default(now())
-  updatedAt      DateTime  @updatedAt
-  merchant       String    @db.VarChar(255)
-  price          Float     @db.Float
+  id             Int      @id @default(autoincrement())
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+  merchant       String   @db.VarChar(255)
+  price          Float    @db.Float
   dateOfPurchase String
+  category       Category @relation(fields: [categoryId], references: [id])
+  categoryId     Int 
+}
+
+// One category can have many expenses
+// Many expenses can have one category
+
+model Category {
+  id        Int       @id @default(autoincrement())
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+  title     String    @db.VarChar(255)
+  expenses  Expense[]
 }

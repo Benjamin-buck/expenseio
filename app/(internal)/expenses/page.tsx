@@ -15,11 +15,11 @@ const page = async () => {
       <div className="grid grid-cols-8 w-full gap-4">
         <div className="col-span-2">
           <TotalExpenses expenses={expenses} />
-          <CategoriesTable />
-          <SavingsTable />
+          {/* <CategoriesTable /> */}
+          {/* <SavingsTable /> */}
         </div>
         <div className="col-span-6">
-          <IncomeTable />
+          {/* <IncomeTable /> */}
           <ExpensesTable expenses={expenses} />
         </div>
       </div>
