@@ -9,8 +9,11 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import Button from "@/components/Button";
+import prisma from "@/prisma/client";
+import Link from "next/link";
 
-const ExpensesTable = () => {
+const ExpensesTable = async () => {
+  const expenses = await prisma.expense.findMany();
   return (
     <div className="card">
       <div className="flex justify-between items-center">
@@ -20,7 +23,9 @@ const ExpensesTable = () => {
             A list of your expenses so far this month.
           </p>
         </div>
-        <Button label="Add Expense" />
+        <Link href="/expenses/new">
+          <Button label="Add Expense" />
+        </Link>
       </div>
 
       <Table className="mt-5 text-md">
@@ -39,22 +44,16 @@ const ExpensesTable = () => {
           </TableRow>
         </TableHeader>
         <TableBody>
-          <TableRow>
-            <TableCell className="font-medium">08/11/2024</TableCell>
-            <TableCell>Shopify</TableCell>
-            <TableCell>Business</TableCell>
-            <TableCell className="text-right font-bold text-red-500">
-              -$250.00
-            </TableCell>
-          </TableRow>
-          <TableRow>
-            <TableCell className="font-medium">08/11/2024</TableCell>
-            <TableCell>Shopify</TableCell>
-            <TableCell>Business</TableCell>
-            <TableCell className="text-right font-bold text-red-500">
-              -$250.00
-            </TableCell>
-          </TableRow>
+          {expenses.map((expense) => (
+            <TableRow key={expense.id}>
+              <TableCell className="font-medium">08/11/2024</TableCell>
+              <TableCell>{expense.merchant}</TableCell>
+              <TableCell>Business</TableCell>
+              <TableCell className="text-right font-bold text-red-500">
+                ${expense.price}
+              </TableCell>
+            </TableRow>
+          ))}
         </TableBody>
       </Table>
     </div>
