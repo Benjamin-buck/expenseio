@@ -4,15 +4,9 @@ import * as React from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 import { useRouter } from "next/navigation";
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { Category } from "@prisma/client";
 
-const NewExpenseForm = () => {
+const NewExpenseForm = ({ categories }: { categories: Category[] }) => {
   const router = useRouter();
   const { register, handleSubmit } = useForm();
   const onSubmit = handleSubmit(async (data) => {
@@ -40,20 +34,20 @@ const NewExpenseForm = () => {
         placeholder="Merchant"
         {...register("merchant")}
       />
-      <div className=" mb-5">
-        <label htmlFor="merchant" className="font-semibold">
-          Merchant
+      <div className="flex flex-col mb-5">
+        <label htmlFor="category" className="font-semibold">
+          Category
         </label>
-        <Select>
-          <SelectTrigger className="w-[250px]">
-            <SelectValue placeholder="Category" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectItem value="groceries">Rent</SelectItem>
-            <SelectItem value="rent">Groceires</SelectItem>
-            <SelectItem value="system">System</SelectItem>
-          </SelectContent>
-        </Select>
+        <select
+          className="w-[250px] py-2 border-gray-200 border rounded-md shadow-sm text-sm px-2"
+          {...register("categoryId")}
+        >
+          {categories.map((category) => (
+            <option key={category.id} value={category.id}>
+              {category.title}
+            </option>
+          ))}
+        </select>
       </div>
 
       <div className="flex flex-col mb-5">
