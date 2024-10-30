@@ -13,7 +13,7 @@ const NewExpenseForm = ({ categories }: { categories: Category[] }) => {
     console.log(data);
     console.log(Date.parse(data.date));
     await axios.post("/api/expense", data);
-    router.push("/expenses");
+    router.push("/dashboard/expenses");
     router.refresh();
   });
   return (
