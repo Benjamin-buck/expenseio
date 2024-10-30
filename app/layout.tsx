@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Instrument_Sans, Inter } from "next/font/google";
-import Navbar from "./Navbar";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -26,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable}  ${instrumentSans.variable}`}>
-        <main className="font-instrumentSans">{children}</main>
+        {children}
       </body>
     </html>
   );
