@@ -26,6 +26,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable}  ${instrumentSans.variable}`}>
+        <Navbar />
         <main className="font-instrumentSans">{children}</main>
       </body>
     </html>
