@@ -10,11 +10,14 @@ import {
 import Button from "@/components/Button";
 import Link from "next/link";
 import { Expense } from "@prisma/client";
+import prisma from "@/prisma/client";
 interface Props {
   expenses: Expense[];
 }
 
 const ExpensesTable = async ({ expenses }: Props) => {
+  const categories = await prisma.category.findMany();
+
   return (
     <div className="card">
       <div className="flex justify-between items-center">
@@ -51,7 +54,7 @@ const ExpensesTable = async ({ expenses }: Props) => {
                 {expense.dateOfPurchase}
               </TableCell>
               <TableCell>{expense.merchant}</TableCell>
-              <TableCell>{}</TableCell>
+              <TableCell>{categories[expense.categoryId - 1].title}</TableCell>
               <TableCell className="text-right font-bold text-red-500">
                 ${expense.price}
               </TableCell>
