@@ -4,12 +4,6 @@ import ExpensesTable from "./ExpensesTable";
 import TotalExpenses from "./TotalExpenses";
 import prisma from "@/prisma/client";
 const page = async () => {
-  // const expenses = await prisma.expense.findMany({
-  //   relationLoadStrategy: "join",
-  //   include: {
-  //     category: true,
-  //   },
-  // });
   const expenses = await prisma.expense.findMany({
     include: {
       category: true,

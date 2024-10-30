@@ -26,7 +26,7 @@ const ExpensesTable = async ({ expenses }: Props) => {
           title="Expenses"
           description="A list of your expenses so far this month."
         />
-        <Link href="/expenses/new">
+        <Link href="/dashboard/expenses/new">
           <Button label="Add Expense" />
         </Link>
       </div>
