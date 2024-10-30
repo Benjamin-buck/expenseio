@@ -1,3 +1,4 @@
+import CardTitle from "@/components/CardTitle";
 import {
   Table,
   TableBody,
@@ -14,12 +15,10 @@ const CategoriesTable = async () => {
 
   return (
     <div className="card">
-      <div>
-        <h2 className="card_heading">Categories</h2>
-        <p className="card_desc">
-          Your categories in comparison to your amount spent.
-        </p>
-      </div>
+      <CardTitle
+        title="Categories"
+        description="Your categories in comparison to your amount spent."
+      />
       <Table className="text-md mt-5">
         <TableCaption>A list of your recent invoices.</TableCaption>
         <TableHeader>

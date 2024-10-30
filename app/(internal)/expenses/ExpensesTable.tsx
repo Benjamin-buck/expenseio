@@ -11,6 +11,7 @@ import Button from "@/components/Button";
 import Link from "next/link";
 import { Expense } from "@prisma/client";
 import prisma from "@/prisma/client";
+import CardTitle from "@/components/CardTitle";
 interface Props {
   expenses: Expense[];
 }
@@ -21,12 +22,10 @@ const ExpensesTable = async ({ expenses }: Props) => {
   return (
     <div className="card">
       <div className="flex justify-between items-center">
-        <div>
-          <h2 className="card_heading">Expenses</h2>
-          <p className="card_desc">
-            A list of your expenses so far this month.
-          </p>
-        </div>
+        <CardTitle
+          title="Expenses"
+          description="A list of your expenses so far this month."
+        />
         <Link href="/expenses/new">
           <Button label="Add Expense" />
         </Link>
