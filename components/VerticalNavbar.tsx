@@ -7,19 +7,19 @@ import React from "react";
 export const navLinks = [
   {
     label: "Home",
-    href: "/dashboard",
+    href: "/dashboard/home",
     whiteLogo: "/home-white.svg",
     grayLogo: "/home-gray.svg",
   },
   {
     label: "Expenses",
-    href: "/expenses",
+    href: "/dashboard/expenses",
     whiteLogo: "/expenses-white.svg",
     grayLogo: "/expenses-gray.svg",
   },
   {
     label: "Cards",
-    href: "/cards",
+    href: "/dashboard/cards",
     whiteLogo: "/cards-white.svg",
     grayLogo: "/cards-gray.svg",
   },
