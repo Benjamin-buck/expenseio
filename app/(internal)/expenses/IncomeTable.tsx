@@ -1,12 +1,10 @@
+import CardTitle from "@/components/CardTitle";
 import React from "react";
 
 const IncomeTable = () => {
   return (
     <div className="card mb-5">
-      <div>
-        <h2 className="card_heading">Income</h2>
-        <p className="card_desc">Your income this month.</p>
-      </div>
+      <CardTitle title="Income" description="Your income this month." />
     </div>
   );
 };

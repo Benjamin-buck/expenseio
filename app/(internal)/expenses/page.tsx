@@ -1,9 +1,6 @@
 import PageHeading from "@/components/PageHeading";
 import React from "react";
 import ExpensesTable from "./ExpensesTable";
-import CategoriesTable from "./CategoriesTable";
-import SavingsTable from "./SavingsTable";
-import IncomeTable from "./IncomeTable";
 import TotalExpenses from "./TotalExpenses";
 import prisma from "@/prisma/client";
 const page = async () => {
