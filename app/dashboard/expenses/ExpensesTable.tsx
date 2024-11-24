@@ -12,6 +12,8 @@ import Link from "next/link";
 import { Expense } from "@prisma/client";
 import prisma from "@/prisma/client";
 import CardTitle from "@/components/CardTitle";
+import { BiExport } from "react-icons/bi";
+import { CgImport } from "react-icons/cg";
 interface Props {
   expenses: Expense[];
 }
@@ -26,9 +28,15 @@ const ExpensesTable = async ({ expenses }: Props) => {
           title="Expenses"
           description="A list of your expenses so far this month."
         />
-        <Link href="/dashboard/expenses/new">
-          <Button label="Add Expense" />
-        </Link>
+        <div className="flex gap-4 items-center">
+          <div id="actions" className="text-2xl flex gap-3">
+            <BiExport />
+            <CgImport />
+          </div>
+          <Link href="/dashboard/expenses/new">
+            <Button label="Add Expense" />
+          </Link>
+        </div>
       </div>
 
       <Table className="mt-5 text-md">
