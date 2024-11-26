@@ -1,6 +1,7 @@
+"use client";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 const navLinks = [
   { label: "Home", href: "/" },
@@ -9,6 +10,7 @@ const navLinks = [
 ];
 
 const Navbar = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   return (
     <nav className="w-full text-white bg-black">
       <div className="mx-auto container max-sm:px-6 py-3 flex items-center justify-between">
@@ -27,9 +29,11 @@ const Navbar = () => {
         </ul>
 
         <div>
-          <button className="bg-white text-black px-3 py-2 font-semibold font-instrumentSans rounded-md">
-            Log in / Sign up
-          </button>
+          <Link href="/dashboard/home">
+            <button className="bg-white text-black px-3 py-2 font-semibold font-instrumentSans rounded-md">
+              {isLoggedIn ? "Admin Dashboard" : "Log in / Sign up"}
+            </button>
+          </Link>
         </div>
       </div>
     </nav>
