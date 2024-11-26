@@ -5,9 +5,9 @@ const Hero = () => {
   return (
     <div className="flex flex-col items-center justify-center mt-10">
       <h1 className="text-5xl text-center font-semibold mb-2">
-        Take Control of Your Finances with Ease
+        Get your money in check.
       </h1>
-      <p className="mb-5 text-center">
+      <p className="mb-5 text-center max-w-[600px]">
         Manage your money smarter, not harder. Our AI-powered budgeting app
         helps you track expenses, plan budgets, and achieve your financial goals
         effortlessly.
@@ -17,6 +17,10 @@ const Hero = () => {
           Sign Up Today
         </button>
       </Link>
+      {/* App Re-construction */}
+      <div className="container mx-auto rounded-md my-10 border-4 border-gray-200">
+        Test
+      </div>
     </div>
   );
 };
