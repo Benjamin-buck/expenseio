@@ -12,7 +12,7 @@ const PageHeading = ({ title }: Props) => {
     <div className="flex justify-between items-center">
       <h1 className="page_title">{title}</h1>
       <div className="flex gap-3 items-center">
-        <Link href="/dashboard/user">
+        <Link href="/dashboard/user/account">
           <Button label="Account Settings" />
         </Link>
 
