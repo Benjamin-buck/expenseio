@@ -10,7 +10,7 @@ export const navLinks = [
 ];
 
 const Navbar = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <nav className="w-full text-white bg-black">
       <div className="mx-auto container max-sm:px-6 py-3 flex items-center justify-between">
@@ -29,7 +29,7 @@ const Navbar = () => {
         </ul>
 
         <div>
-          <Link href="/dashboard/home">
+          <Link href={isLoggedIn ? "/dashboard/home" : "/login"}>
             <button className="bg-white text-black px-3 py-2 font-semibold font-instrumentSans rounded-md">
               {isLoggedIn ? "Admin Dashboard" : "Log in / Sign up"}
             </button>

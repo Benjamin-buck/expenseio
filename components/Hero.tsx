@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import { navLinks } from "./VerticalNavbar";
 
 const Hero = () => {
   return (
@@ -41,11 +40,7 @@ const Hero = () => {
                 alt="logo"
                 className="pt-4"
               />
-              <ul>
-                {navLinks.map((link) => (
-                  <p>Test</p>
-                ))}
-              </ul>
+              <ul></ul>
             </div>
           </div>
         </div>
